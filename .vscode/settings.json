@@ -6,7 +6,13 @@
 
     "latex-workshop.latex.recipes": [
         {
-            "name": "XeLaTeX -> Biber -> XeLaTeX x2",
+            "name": "Quick build: XeLaTeX",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "Full build: XeLaTeX -> Biber -> XeLaTeX x2",
             "tools": [
                 "xelatex",
                 "biber",
