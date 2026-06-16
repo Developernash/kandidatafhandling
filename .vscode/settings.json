@@ -1,0 +1,71 @@
+{
+    "latex-workshop.latex.autoBuild.run": "onSave",
+
+    "latex-workshop.latex.outDir": "%DIR%/build",
+    "latex-workshop.latex.auxDir": "%OUTDIR%",
+
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "XeLaTeX -> Biber -> XeLaTeX x2",
+            "tools": [
+                "xelatex",
+                "biber",
+                "xelatex",
+                "xelatex"
+            ]
+        }
+    ],
+
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "--input-directory=%OUTDIR%",
+                "--output-directory=%OUTDIR%",
+                "%DOCFILE%"
+            ],
+            "env": {}
+        }
+    ],
+
+    "latex-workshop.latex.recipe.default": "first",
+    "latex-workshop.latex.build.forceRecipeUsage": true,
+
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.synctex.afterBuild.enabled": true,
+
+    "latex-workshop.latex.clean.method": "glob",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.bcf",
+        "*.blg",
+        "*.fdb_latexmk",
+        "*.fls",
+        "*.lof",
+        "*.log",
+        "*.lot",
+        "*.out",
+        "*.run.xml",
+        "*.synctex.gz",
+        "*.toc",
+        "*.xdv"
+    ],
+
+    "latex-workshop.latex.build.clearLog.everyRecipeStep.enabled": false,
+
+    "latex-workshop.linting.chktex.enabled": false
+}

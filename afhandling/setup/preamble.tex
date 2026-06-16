@@ -1,0 +1,160 @@
+% =========================================================
+% University of Copenhagen style
+% =========================================================
+
+\usepackage{KUstyle}
+
+
+% =========================================================
+% Language, fonts, and typography
+%
+% This setup must be compiled with LuaLaTeX or XeLaTeX.
+% =========================================================
+
+\usepackage[english]{babel}
+\usepackage{fontspec}
+\usepackage{mathtools}
+\usepackage{unicode-math}
+\usepackage{microtype}
+\usepackage{csquotes}
+
+\defaultfontfeatures{
+    Ligatures = TeX
+}
+
+% Elegant and portable academic font combination
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmonofont{Latin Modern Mono}[
+    Scale = MatchLowercase
+]
+\setmathfont{Libertinus Math}
+
+
+% =========================================================
+% Page layout
+% =========================================================
+
+\usepackage[
+    a4paper,
+    inner=30mm,
+    outer=25mm,
+    top=25mm,
+    bottom=30mm
+]{geometry}
+
+
+% =========================================================
+% Paragraphs and line spacing
+% =========================================================
+
+\usepackage{setspace}
+
+% More elegant than full 1.5 spacing.
+% Replace with \onehalfspacing if formally required.
+\setstretch{1.25}
+
+% Traditional book-style paragraph formatting
+\setlength{\parindent}{1.25em}
+\setlength{\parskip}{0pt}
+
+% Helps prevent text from extending into the margin
+% without applying \sloppy globally.
+\emergencystretch=2em
+
+% Reduce isolated lines at page boundaries
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+
+% =========================================================
+% Tables
+% =========================================================
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{threeparttable}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{pdflscape}
+
+% Slightly more vertical space inside tables
+\renewcommand{\arraystretch}{1.12}
+
+% Flexible-width text columns
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+
+% Consistent formatting and alignment of numbers
+\sisetup{
+    detect-all,
+    group-digits=integer,
+    group-separator={,},
+    group-minimum-digits=4,
+    table-number-alignment=center
+}
+
+
+% =========================================================
+% Figures
+% =========================================================
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{placeins}
+
+\graphicspath{
+    {generated/figures/}
+}
+
+\captionsetup{
+    font=small,
+    labelfont=bf,
+    labelsep=period,
+    skip=6pt
+}
+
+
+% =========================================================
+% Bibliography
+% =========================================================
+
+\usepackage[
+    backend=biber,
+    style=authoryear,
+    sorting=nyt,
+    maxcitenames=2,
+    maxbibnames=99,
+    giveninits=true,
+    doi=true,
+    url=true,
+    isbn=false
+]{biblatex}
+
+\addbibresource{references.bib}
+
+% =========================================================
+% Links and intelligent cross-references
+%
+% These packages should normally be loaded near the end.
+% =========================================================
+
+\usepackage{xurl}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage[
+    nameinlink,
+    noabbrev
+]{cleveref}
+
+\hypersetup{
+    hidelinks,
+    pdfencoding=auto
+}

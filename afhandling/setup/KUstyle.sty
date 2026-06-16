@@ -1,0 +1,168 @@
+\ProvidesPackage{KUstyle}
+
+\RequirePackage{eso-pic}
+\RequirePackage{graphicx}
+\RequirePackage[absolute]{textpos}
+\RequirePackage{hyperref}
+
+\definecolor{KUrod}{RGB}{144,26,30}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\newcommand*{\advisor}[1]{\def\@advisor{#1}}
+\newcommand*{\ptype}[1]{\def\@ptype{#1}}
+\newcommand*{\subtitle}[1]{\def\@subtitle{#1}}
+\newcommand*{\fpimage}[1]{\def\@fpimage{#1}}
+\newcommand*{\characters}[1]{\def\@characters{#1}}
+\newcommand*{\mutual}[1]{\def\@mutual{#1}}
+\newcommand*{\individual}[1]{\def\@individual{#1}}
+
+\renewcommand{\maketitle}{%
+    \clearpage
+    \thispagestyle{empty}%
+    \AddToShipoutPictureBG*{%
+        \includegraphics[width=\paperwidth,height=\paperheight]{setup/KU-logo.pdf}%
+    }%
+
+    \null
+
+    \ifdefined\@fpimage
+        \begin{textblock}{10}(1.5,4.7)
+            \noindent\includegraphics*[width=\textwidth, height=80mm, keepaspectratio]{\@fpimage}
+        \end{textblock}
+    \fi
+
+    \ifdefined\@ptype
+        \begin{textblock}{10}(1.5,6)
+            \noindent\fontsize{20}{20}\selectfont\textbf{\@ptype}
+        \end{textblock}
+    \fi
+
+    \ifdefined\@author
+        \begin{textblock}{10}(1.5,6.6)
+            \noindent\fontsize{14}{14}\selectfont\@author
+        \end{textblock}
+    \fi
+
+    \ifdefined\@title
+        \begin{textblock}{10}(1.5,8)
+            \noindent\fontsize{20}{20}\selectfont\textbf{\@title}
+        \end{textblock}
+    \fi
+
+    \ifdefined\@subtitle
+        \begin{textblock}{10}(1.5,9)
+            \vspace{0.2cm}
+            \noindent\fontsize{14}{14}\selectfont\@subtitle
+        \end{textblock}
+    \fi
+
+    \ifdefined\@advisor
+        \begin{textblock}{10}(1.5,12)
+            \noindent\fontsize{11}{11}\selectfont\textbf{Advisor: } \@advisor
+        \end{textblock}
+    \fi
+
+    \ifdefined\@date
+        \begin{textblock}{10}(1.5,12.4)
+            \noindent\fontsize{11}{11}\selectfont\textbf{Date: } \@date
+        \end{textblock}
+    \fi
+
+    \ifdefined\@characters
+        \begin{textblock}{10}(1.5,12.8)
+            \noindent\fontsize{11}{11}\selectfont\textbf{Characters: } \@characters
+        \end{textblock}
+    \fi
+
+    \ifdefined\@mutual
+        \begin{textblock}{10}(1.5,13.2)
+            \noindent\fontsize{11}{11}\selectfont\textbf{Mutual contributions: \\} \@mutual
+        \end{textblock}
+    \fi
+
+    \ifdefined\@individual
+        \begin{textblock}{10}(1.5,13.8)
+            \noindent\fontsize{11}{11}\selectfont\textbf{Individual contributions: \\} \@individual
+        \end{textblock}
+    \fi
+
+    \clearpage
+}
+
+%%%%%%%%%%%%%%%%%%%%5
+% % \def\maketitle{
+%     \thispagestyle{empty}
+%     \AddToShipoutPictureBG*{%
+%         \includegraphics[width=\paperwidth,height=\paperheight]{setup/KU-logo.pdf}%
+%     }
+
+%     \ifdefined\@fpimage
+%         \begin{textblock}{10}(1.5,4.7)
+%             \noindent\includegraphics*[width=\textwidth, height=80mm, keepaspectratio]{\@fpimage}
+%         \end{textblock}
+%     \fi
+
+%     \ifdefined\@ptype
+%         \begin{textblock}{10}(1.5,6)
+%             \noindent\fontsize{20}{20}\selectfont\textbf{\@ptype}
+%         \end{textblock}
+%     \fi
+
+%     \ifdefined\@author
+%         \begin{textblock}{10}(1.5,6.6)
+%             \noindent\fontsize{14}{14}\selectfont\@author
+%         \end{textblock}
+%     \fi
+
+%     \ifdefined\@title
+%         \begin{textblock}{10}(1.5,8)
+%             \noindent\fontsize{20}{20}\selectfont\textbf{\@title}
+%         \end{textblock}
+%     \fi
+
+%     \ifdefined\@subtitle
+%         \begin{textblock}{10}(1.5,9)
+%             \noindent\fontsize{14}{14}\selectfont\@subtitle
+%         \end{textblock}
+%     \fi
+
+%     \ifdefined\@advisor
+%         \begin{textblock}{10}(1.5,12)
+%             \noindent\fontsize{11}{11}\selectfont\textbf{Advisor: } \@advisor
+%         \end{textblock}
+%     \fi
+
+%     \ifdefined\@date
+%         \begin{textblock}{10}(1.5,12.4)
+%             \noindent\fontsize{11}{11}\selectfont\textbf{Date: } \@date
+%         \end{textblock}
+%     \fi
+
+%     \ifdefined\@characters
+%         \begin{textblock}{10}(1.5,12.8)
+%             \noindent\fontsize{11}{11}\selectfont\textbf{Characters: } \@characters
+%         \end{textblock}
+%     \fi
+
+%     \ifdefined\@mutual
+%         \begin{textblock}{10}(1.5,13.2)
+%             \noindent\fontsize{11}{11}\selectfont\textbf{Mutual contributions: \\} \@mutual
+%         \end{textblock}
+%     \fi
+
+%     \ifdefined\@individual
+%         \begin{textblock}{10}(1.5,13.8)
+%             \noindent\fontsize{11}{11}\selectfont\textbf{Individual contributions: \\} \@individual
+%         \end{textblock}
+%     \fi
+
+%     \newpage
+%     \noindent
+% }

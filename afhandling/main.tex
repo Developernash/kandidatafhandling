@@ -1,0 +1,47 @@
+\documentclass[12pt,a4paper,oneside]{report}
+
+\usepackage{setup/KUstyle}
+\input{setup/preamble}
+
+% Frontpage
+\ptype{Master's thesis}
+\date{30 juni 2027}
+
+\title{Master thesis: Life-Cycle Model for Retirement in Denmark}
+\subtitle{amazing dcegm model for retirement analysis}
+
+\author{Nashwan Ghali Al-Zyadi}
+\characters{120.000}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+\pagenumbering{roman}
+
+\tableofcontents
+\clearpage
+
+\pagenumbering{arabic}
+
+\input{chapters/1introduction}
+\input{chapters/2motivation}
+\input{chapters/3methods}
+\input{chapters/4data}
+\input{chapters/5model}
+\input{chapters/6estimation}
+\input{chapters/7results}
+\input{chapters/8discussion}
+\input{chapters/9conclusion}
+
+\appendix
+\input{appendices/appendixA}
+
+\clearpage
+\printbibliography[
+    heading=bibintoc,
+    title={References}
+]
+
+\end{document}
